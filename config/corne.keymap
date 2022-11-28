@@ -32,10 +32,6 @@
       &kp LEFT_SHIFT &kp F20 &kp F20 &kp F20 &kp F20 &kp F20 &kp UNDER &kp PLUS &kp LBRC &kp RBRC &kp PIPE &kp TILDE
       &kp LEFT_GUI &mo 3 &kp SPACE &kp ENTER &trans &kp RIGHT_ALT
       >;
-    };layer3 {
-      bindings = <
-      QK_BOOT &kp F20 &kp F20 &kp F20 &kp F20 &kp F20 &kp F20 &kp F20 &kp F20 &kp F20 &kp F20 &kp F20 RGB_TOG RGB_HUI RGB_SAI RGB_VAI &kp F20 &kp F20 &kp F20 &kp F20 &kp F20 &kp F20 &kp F20 &kp F20 RGB_MOD RGB_HUD RGB_SAD RGB_VAD &kp F20 &kp F20 &kp F20 &kp F20 &kp F20 &kp F20 &kp F20 &kp F20 &kp LEFT_GUI &trans &kp SPACE &kp ENTER &trans &kp RIGHT_ALT
-      >;
     };
   };
 };
