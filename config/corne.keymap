@@ -9,21 +9,33 @@
 #include <dt-bindings/zmk/bt.h>
 
 / {
+  behaviors {
+    am: alpha_mods {
+        compatible = "zmk,behavior-hold-tap";
+        label = "ALPHA_MT";
+        #binding-cells = <2>;
+        tapping-term-ms = <250>;
+        quick-tap-ms = <150>;
+        flavor = "tap-preferred";
+        bindings = <&kp>, <&kp>;
+    };
+  };
+
   keymap {
     compatible = "zmk,keymap";
     layer0 {
       bindings = <
-      &kp TAB             &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U &kp I &kp O &kp P &kp BKSP
-      &mt LEFT_GUI ESCAPE &kp A &kp S &kp D &kp F &kp G   &kp H &kp J &kp K &kp L &mt LEFT_CONTROL SEMICOLON &lt 1 SINGLE_QUOTE
-      &kp LEFT_SHIFT &kp Z &kp X &kp C &kp V &kp B &kp N &kp M &kp COMMA &kp DOT &kp SLASH &kp RIGHT_SHIFT
-      &mo 1 &mo 2 &mt LC(LS(LALT)) SPACE &kp ENTER &kp SPACE &to 1
+      &kp TAB             &kp Q &kp W &kp E               &kp R          &kp T                  &kp Y     &kp U &kp I     &kp O                &kp P                      &kp BKSP
+      &mt LEFT_GUI ESCAPE &kp A &kp S &am LEFT_CONTROL D  &am LEFT_GUI F &kp G                  &kp H     &am RIGHT_GUI J &am RIGHT_CONTROL K  &kp L     &mt LEFT_CONTROL SEMICOLON &kp SINGLE_QUOTE
+      &kp LEFT_SHIFT      &kp Z &kp X &kp C               &kp V          &kp B                  &kp N     &kp M &kp COMMA &kp DOT              &kp SLASH                  &kp RIGHT_SHIFT
+                                      &mo 1               &mo 2          &mt LC(LS(LALT)) BKSP  &kp ENTER &kp SPACE &to 1
       >;
     };layer1 {
       bindings = <
-      &kp TAB &kp N1 &kp N2 &kp N3 &kp N4 &kp N5 &kp N6 &kp N7 &kp N8 &kp N9 &kp N0 &kp BACKSPACE
-      &kp LEFT_CONTROL &kp F20 &kp F20 &kp F20 &kp F20 &kp F20 &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans &trans
-      &kp LEFT_SHIFT &kp F20 &kp F20 &kp F20 &kp F20 &kp F20 &kp F20 &kp F20 &trans &trans &trans &kp F20
-      &kp LEFT_GUI &trans &kp SPACE &kp ENTER &mo 3 &to 0
+      &kp TAB             &kp N1    &kp N2    &kp N3  &kp N4  &kp N5  &kp N6   &kp N7   &kp N8 &kp N9    &kp N0 &kp BACKSPACE
+      &kp LEFT_CONTROL    &kp F20   &kp F20   &kp F20 &kp F20 &kp F20 &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans &trans
+      &kp LEFT_SHIFT      &kp F20   &kp F20   &kp F20 &kp F20 &kp F20 &kp F20  &kp F20  &trans &trans    &trans &kp F20
+      &kp LEFT_GUI &trans &kp SPACE &kp ENTER &mo 3   &to 0
       >;
     };layer2 {
       bindings = <
