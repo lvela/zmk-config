@@ -17,15 +17,15 @@
             bindings = <&bt BT_CLR>;
         };
     };
-};
 
-&keymap {
-    compatible = "zmk,keymap";
-
-    default_layer {
-        bindings = <
-            &kp LC(LS(LA(M)))
-            &kp LC(LS(LA(N)))
-        >;
+    &keymap {
+        compatible = "zmk,keymap";
+    
+        default_layer {
+            bindings = <
+                &kp LC(LS(LA(M)))
+                &kp LC(LS(LA(N)))
+            >;
+        };
     };
 };
